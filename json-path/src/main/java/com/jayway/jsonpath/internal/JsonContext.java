@@ -128,7 +128,7 @@ public class JsonContext implements DocumentContext {
 
     @Override
     public DocumentContext set(JsonPath path, Object newValue) {
-        List<String> modified = path.set(json, newValue, configuration.addOptions(Option.AS_PATH_LIST));
+        Iterable<String> modified = path.set(json, newValue, configuration.addOptions(Option.AS_PATH_LIST));
         if (logger.isDebugEnabled()) {
             for (String p : modified) {
                 logger.debug("Set path {} new value {}", p, newValue);
